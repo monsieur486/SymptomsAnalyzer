@@ -1,1 +1,5 @@
-Sample project for OpenClassroom's fundamentals of Java
+# Symptoms Analyzer
+
+Refactorisation de code et modification de fonctionalités
+
+Autheur : Laurent Touret OCR 2020
