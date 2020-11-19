@@ -4,7 +4,7 @@ public class FileExport {
 
     public static void fileExport(){
 
-        DataRecovry.dataRecovery();
+        DataRecovery.dataRecovery();
         System.out.println("Fichier result.out créé.");
 
     }
