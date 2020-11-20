@@ -9,17 +9,17 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Tri alphabériquement le résultat obtenu.
+ * Class d'écriture du fichier de sortie
  */
 public class WriteFile {
 
     /**
-     * Tri alphabériquement le résultat obtenu.
+     * Méthode d'écriture de fichier
      */
     public static void writeFile() {
 
         /**
-         *  Tri alphabériquement le résultat obtenu.
+         *  Essai d'ouvrir le fichier result.out en mode écriture
          */
         try {
             FileWriter writer = new FileWriter("result.out");
@@ -28,11 +28,11 @@ public class WriteFile {
             Iterator iterator = set.iterator();
 
             /**
-             *  Tri alphabériquement le résultat obtenu.
+             *  Essai d'écrire les symptomes triés dans le fichier de sortie
              */
             try {
                 /**
-                 *  Tri alphabériquement le résultat obtenu.
+                 *  Parcours les symtomes trié alphabétiquement
                  */
                 while (iterator.hasNext()) {
                     Map.Entry symptom = (Map.Entry) iterator.next();
@@ -45,7 +45,7 @@ public class WriteFile {
 
             }
             /**
-             *  Tri alphabériquement le résultat obtenu.
+             *  Gestion des erreurs d'écriture
              */ catch (IOException e) {
                 System.out.println("[error] File write error.");
                 System.exit(2);

@@ -5,24 +5,24 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Tri alphabériquement le résultat obtenu.
+ * Class permettant de lire le contenu du fichier symptoms.txt
  */
 public class ReadFile {
 
     /**
-     * Tri alphabériquement le résultat obtenu.
+     * Méthode de lecture du fichier
      */
     public static void readFile() {
 
         /**
-         *  Tri alphabériquement le résultat obtenu.
+         *  Essai de lire le fichier
          */
         try {
             BufferedReader reader = new BufferedReader(new FileReader("symptoms.txt"));
             String line = reader.readLine();
 
             /**
-             *  Tri alphabériquement le résultat obtenu.
+             *  Traite les symptomes tant que le fichier contient une ligne non vide
              */
             while (line != null) {
                 SymptomsTreatment.readSymptom(line);
@@ -32,7 +32,7 @@ public class ReadFile {
             System.out.println("[info] Symptoms import successfully completed.");
         }
         /**
-         *  Tri alphabériquement le résultat obtenu.
+         *  Gestion des erreurs de lecture
          */ catch (IOException e) {
             System.out.println("[error] File read error.");
             System.exit(1);
