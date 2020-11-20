@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"com.hemebiotech.analytics","l":"Main"},{"p":"com.hemebiotech.analytics.core","l":"OrderSymptoms"},{"p":"com.hemebiotech.analytics.core","l":"ReadFile"},{"p":"com.hemebiotech.analytics.core","l":"SymptomsTreatment"},{"p":"com.hemebiotech.analytics.core","l":"WriteFile"}];updateSearchResults();
