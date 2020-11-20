@@ -1,12 +1,13 @@
 package com.hemebiotech.analytics;
 
-import com.hemebiotech.analytics.core.FileExport;
+import com.hemebiotech.analytics.core.MainApp;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        FileExport.fileExport();
+        MainApp.initialization();
+        MainApp.fileExport();
 
     }
 }
