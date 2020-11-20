@@ -18,12 +18,12 @@ import java.util.Map;
 
 public class Main {
     /**
-     *  Initialise le programme
+     *  Initialise la variable public resultats Map<String, Integer>
      */
     public static Map<String, Integer> results = new HashMap<>();
 
     /**
-     *  Initialise le programme
+     *  Initialise la variable public symptomsSorted Map<String, Integer>
      */
     public static Map<String, Integer> symptomsSorted;
 
