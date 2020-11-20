@@ -1,11 +1,10 @@
 package com.hemebiotech.analytics.core;
 
-import com.hemebiotech.analytics.core.datarecovery.OrderSymptoms;
-import com.hemebiotech.analytics.core.datarecovery.ReadFile;
+import java.io.IOException;
 
 public class DataRecovery {
 
-    public static void dataRecovery(){
+    public static void dataRecovery() throws IOException {
 
         ReadFile.readFile();
         OrderSymptoms.orderSymptoms();
