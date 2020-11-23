@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Main class of the application
+ * AnalyticsCounter class of the application
  * <p>
  * Extracts the symptoms from the symptoms.txt file and counts them
  * Alphabetically sorting the result obtained
@@ -15,7 +15,7 @@ import java.util.Map;
  * @author Laurent Touret
  */
 
-public class Main {
+public class AnalyticsCounter {
     /**
      *  Initiation of the public variable result Map<String, Integer>
      */

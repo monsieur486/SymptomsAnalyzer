@@ -1,6 +1,6 @@
 package com.hemebiotech.analytics.core;
 
-import com.hemebiotech.analytics.Main;
+import com.hemebiotech.analytics.AnalyticsCounter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
@@ -23,7 +23,7 @@ public class WriteFile {
         try {
             FileWriter writer = new FileWriter("result.out");
 
-            Set set = Main.symptomsSorted.entrySet();
+            Set set = AnalyticsCounter.symptomsSorted.entrySet();
             Iterator iterator = set.iterator();
 
             /**
