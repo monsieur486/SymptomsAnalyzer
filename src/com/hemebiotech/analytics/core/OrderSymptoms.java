@@ -4,12 +4,12 @@ import com.hemebiotech.analytics.Main;
 import java.util.TreeMap;
 
 /**
- *  Classe permettant le tri alphabérique
+ *  Class allowing alphabetical sorting
  */
 public class OrderSymptoms {
 
     /**
-     *  Récupère le contenu de resultat et le tri dans symptomsSorted
+     *  Get the content of result and sort in symptomsSorted
      */
     public static void orderSymptoms(){
 

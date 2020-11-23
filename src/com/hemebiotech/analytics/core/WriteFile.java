@@ -1,7 +1,6 @@
 package com.hemebiotech.analytics.core;
 
 import com.hemebiotech.analytics.Main;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
@@ -9,17 +8,17 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Class d'écriture du fichier de sortie
+ * Write class of the output file
  */
 public class WriteFile {
 
     /**
-     * Méthode d'écriture de fichier
+     * File write method
      */
     public static void writeFile() {
 
         /**
-         *  Essai d'ouvrir le fichier result.out en mode écriture
+         *  Try to open the result.out file in write mode
          */
         try {
             FileWriter writer = new FileWriter("result.out");
@@ -28,11 +27,11 @@ public class WriteFile {
             Iterator iterator = set.iterator();
 
             /**
-             *  Essai d'écrire les symptomes triés dans le fichier de sortie
+             * Trying to write the sorted symptoms to the output file
              */
             try {
                 /**
-                 *  Parcours les symtomes trié alphabétiquement
+                 *  Browse the symtoms sorted alphabetically
                  */
                 while (iterator.hasNext()) {
                     Map.Entry symptom = (Map.Entry) iterator.next();
@@ -45,7 +44,7 @@ public class WriteFile {
 
             }
             /**
-             *  Gestion des erreurs d'écriture
+             *  Handling write errors
              */ catch (IOException e) {
                 System.out.println("[error] File write error.");
                 System.exit(2);
@@ -53,7 +52,7 @@ public class WriteFile {
 
         }
         /**
-         *  Tri alphabériquement le résultat obtenu.
+         *  Alphabetically sort the result obtained.
          */
         catch (IOException e) {
             System.out.println("[error] File write error.");
