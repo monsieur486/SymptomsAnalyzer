@@ -3,9 +3,6 @@ package com.hemebiotech.analytics.core;
 import com.hemebiotech.analytics.AnalyticsCounter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Write class of the output file
@@ -23,39 +20,33 @@ public class WriteFile {
         try {
             FileWriter writer = new FileWriter("result.out");
 
-            Set set = AnalyticsCounter.symptomsSorted.entrySet();
-            Iterator iterator = set.iterator();
-
-            /**
-             * Trying to write the sorted symptoms to the output file
-             */
-            try {
+            AnalyticsCounter.symptomsSorted.forEach((symptom, counter) -> {
                 /**
-                 *  Browse the symtoms sorted alphabetically
+                 *  Try to write symptom's line in the file
                  */
-                while (iterator.hasNext()) {
-                    Map.Entry symptom = (Map.Entry) iterator.next();
-                    String key = (String) symptom.getKey();
-                    Integer value = (Integer) symptom.getValue();
-                    writer.write(key + ": " + value + "\n");
+                try {
+                    writer.write(symptom + ": " + counter + "\n");
                 }
-                writer.close();
-                System.out.println("[succes] Result.out file created.");
+                /**
+                 *  Error management
+                 */
+                catch (IOException e) {
+                    System.out.println("[error] File write error.");
+                    System.exit(3);
+                }
+            });
 
-            }
             /**
-             *  Handling write errors
-             */ catch (IOException e) {
-                System.out.println("[error] File write error.");
-                System.exit(2);
-            }
-
+             *  Force close the file opened in write mode
+             */
+            writer.close();
+            System.out.println("[succes] Result.out file created.");
         }
         /**
-         *  Alphabetically sort the result obtained.
+         *  Error management
          */
         catch (IOException e) {
-            System.out.println("[error] File write error.");
+            System.out.println("[error] Open file in write mode.");
             System.exit(2);
         }
 
