@@ -35,7 +35,7 @@ public class ReadFile {
                 line = reader.readLine();
             }
             reader.close();
-            Log.succes("symptoms import successfully completed");
+            Log.succes("symptoms import from " + inputFile + " successfully completed");
         }
         /**
          *  Handling of read errors
