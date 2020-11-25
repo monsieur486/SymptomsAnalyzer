@@ -9,7 +9,8 @@ public class SymptomsTreatment {
 
     /**
      * Method of treatment of symtoms
-     * @param line
+     *
+     * @param line the symptom read on the line
      */
     public static void readSymptom(String line) {
 

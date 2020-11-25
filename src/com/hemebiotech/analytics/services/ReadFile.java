@@ -1,5 +1,6 @@
 package com.hemebiotech.analytics.services;
 
+import com.hemebiotech.analytics.config.errorCode;
 import com.hemebiotech.analytics.core.SymptomsTreatment;
 
 import java.io.BufferedReader;
@@ -13,15 +14,18 @@ public class ReadFile {
 
     /**
      * File read method
+     *
+     * @param inputFile the input file
      */
-    public static void readFile() {
+    public static void readFile(String inputFile) {
 
         /**
          *  Try to open the file in read mode
          */
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("symptoms.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
             String line = reader.readLine();
+            Log.succes("reading " + inputFile + " file for processing");
 
             /**
              *  Treat symptoms as long as the file contains a nonblank line
@@ -36,8 +40,8 @@ public class ReadFile {
         /**
          *  Handling of read errors
          */ catch (IOException e) {
-            Log.error("file read error");
-            System.exit(1);
+            Log.error(inputFile + " read error");
+            System.exit(errorCode.READFILE);
         }
 
     }

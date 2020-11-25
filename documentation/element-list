@@ -1,2 +1,4 @@
-com.hemebiotech.analytics
+com.hemebiotech.analytics.config
 com.hemebiotech.analytics.core
+com.hemebiotech.analytics.interfaces
+com.hemebiotech.analytics.services

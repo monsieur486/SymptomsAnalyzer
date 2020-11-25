@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.hemebiotech.analytics"},{"l":"com.hemebiotech.analytics.core"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.hemebiotech.analytics.config"},{"l":"com.hemebiotech.analytics.core"},{"l":"com.hemebiotech.analytics.interfaces"},{"l":"com.hemebiotech.analytics.services"}];updateSearchResults();
