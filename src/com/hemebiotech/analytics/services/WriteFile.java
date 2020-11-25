@@ -1,4 +1,4 @@
-package com.hemebiotech.analytics.core;
+package com.hemebiotech.analytics.services;
 
 import com.hemebiotech.analytics.AnalyticsCounter;
 import java.io.FileWriter;

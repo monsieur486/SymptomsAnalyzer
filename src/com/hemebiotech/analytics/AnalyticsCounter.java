@@ -1,8 +1,8 @@
 package com.hemebiotech.analytics;
 
-import com.hemebiotech.analytics.core.OrderSymptoms;
-import com.hemebiotech.analytics.core.ReadFile;
-import com.hemebiotech.analytics.core.WriteFile;
+import com.hemebiotech.analytics.services.OrderSymptoms;
+import com.hemebiotech.analytics.services.ReadFile;
+import com.hemebiotech.analytics.services.WriteFile;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +12,7 @@ import java.util.Map;
  * Extracts the symptoms from the symptoms.txt file and counts them
  * Alphabetically sorting the result obtained
  * Generate the result in the result.out file
- * @author Laurent Touret
+ * @author Laurent Touret monsieur486@gmail.com
  */
 
 public class AnalyticsCounter {
