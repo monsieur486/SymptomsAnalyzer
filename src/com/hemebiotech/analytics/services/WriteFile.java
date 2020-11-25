@@ -31,7 +31,7 @@ public class WriteFile {
                  *  Error management
                  */
                 catch (IOException e) {
-                    System.out.println("[error] File write error.");
+                    Log.e("file write error");
                     System.exit(3);
                 }
             });
@@ -40,13 +40,13 @@ public class WriteFile {
              *  Force close the file opened in write mode
              */
             writer.close();
-            System.out.println("[succes] Result.out file created.");
+            Log.s("result.out file created");
         }
         /**
          *  Error management
          */
         catch (IOException e) {
-            System.out.println("[error] Open file in write mode.");
+            Log.e("open file in write mode");
             System.exit(2);
         }
 

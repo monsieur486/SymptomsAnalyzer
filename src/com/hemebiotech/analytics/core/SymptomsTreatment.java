@@ -1,6 +1,7 @@
-package com.hemebiotech.analytics.services;
+package com.hemebiotech.analytics.core;
 
 import com.hemebiotech.analytics.AnalyticsCounter;
+import com.hemebiotech.analytics.services.Log;
 
 /**
  * Class for the treatment of symptoms
@@ -21,14 +22,16 @@ public class SymptomsTreatment {
         if (AnalyticsCounter.results.containsKey(line)) {
             counter = AnalyticsCounter.results.get(line) + 1;
             AnalyticsCounter.results.put(line, counter);
-            System.out.println("[info] " + counter + "nd presence of the symptom " + line);
+            String msg = counter + "nd presence of the symptom " + line;
+            Log.i(msg);
         }
         /**
          *  If the symptom does not exist it is added to the map with a counter at 1
          */
         else {
             AnalyticsCounter.results.put(line, 1);
-            System.out.println("[info] 1st presence of the symptom " + line);
+            String msg = "1st presence of the symptom " + line;
+            Log.i(msg);
         }
     }
 

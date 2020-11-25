@@ -1,5 +1,7 @@
 package com.hemebiotech.analytics.services;
 
+import com.hemebiotech.analytics.core.SymptomsTreatment;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -29,12 +31,12 @@ public class ReadFile {
                 line = reader.readLine();
             }
             reader.close();
-            System.out.println("[info] Symptoms import successfully completed.");
+            Log.s("symptoms import successfully completed");
         }
         /**
          *  Handling of read errors
          */ catch (IOException e) {
-            System.out.println("[error] File read error.");
+            Log.e("file read error");
             System.exit(1);
         }
 

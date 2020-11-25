@@ -1,6 +1,7 @@
 package com.hemebiotech.analytics;
 
-import com.hemebiotech.analytics.services.OrderSymptoms;
+import com.hemebiotech.analytics.core.OrderSymptoms;
+import com.hemebiotech.analytics.services.Log;
 import com.hemebiotech.analytics.services.ReadFile;
 import com.hemebiotech.analytics.services.WriteFile;
 import java.util.HashMap;
@@ -35,9 +36,7 @@ public class AnalyticsCounter {
         /**
          *  Program initialization
          */
-        System.out.println("====================");
-        System.out.println("#  Program start   #");
-        System.out.println("====================");
+        Log.s("program start");
 
         /**
          *  Extracts the symptoms from the symptoms.txt file and count them
@@ -57,9 +56,7 @@ public class AnalyticsCounter {
         /**
          *  End of program
          */
-        System.out.println("====================");
-        System.out.println("#  Program stops   #");
-        System.out.println("====================");
+        Log.s("program stops");
 
     }
 }
