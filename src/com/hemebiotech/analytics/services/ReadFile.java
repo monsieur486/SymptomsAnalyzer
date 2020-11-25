@@ -31,12 +31,12 @@ public class ReadFile {
                 line = reader.readLine();
             }
             reader.close();
-            Log.s("symptoms import successfully completed");
+            Log.succes("symptoms import successfully completed");
         }
         /**
          *  Handling of read errors
          */ catch (IOException e) {
-            Log.e("file read error");
+            Log.error("file read error");
             System.exit(1);
         }
 

@@ -1,6 +1,5 @@
 package com.hemebiotech.analytics.core;
 
-import com.hemebiotech.analytics.AnalyticsCounter;
 import com.hemebiotech.analytics.services.Log;
 
 import java.util.TreeMap;
@@ -16,6 +15,6 @@ public class OrderSymptoms {
     public static void orderSymptoms(){
 
         AnalyticsCounter.symptomsSorted = new TreeMap(AnalyticsCounter.results);
-        Log.s("symptoms sorted alphabetically");
+        Log.succes("symptoms sorted alphabetically");
     }
 }

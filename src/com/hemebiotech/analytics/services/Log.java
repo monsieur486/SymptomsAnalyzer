@@ -3,23 +3,45 @@ package com.hemebiotech.analytics.services;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * print log messages
+ */
 public class Log {
     public static Date date = new Date();
     public static SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    public static void i(String message) {
-        System.out.println(formatter.format(date) + ConsoleColors.BLUE + " [info]" + ConsoleColors.RESET + ": " + message);
+    /**
+     * print log message
+     * @param color
+     * @param logType
+     * @param message
+     */
+    private static void PrintLogLine (String color, String logType, String message){
+        String logLine = formatter.format(date) + color + " [" + logType + "]" + ConsoleColors.RESET + " " + message;
+        System.out.println(logLine);
     }
 
-    public static void e(String message) {
-        System.out.println(formatter.format(date) + ConsoleColors.RED + " [error]" + ConsoleColors.RESET + ": " + message);
+    /**
+     * log type info
+     * @param message
+     */
+    public static void info(String message) {
+        PrintLogLine(ConsoleColors.BLUE, "info", message);
     }
 
-    public static void s(String message) {
-        System.out.println(formatter.format(date) + ConsoleColors.GREEN + " [succes]" + ConsoleColors.RESET + ": " + message);
+    /**
+     * log type error
+     * @param message
+     */
+    public static void error(String message) {
+        PrintLogLine(ConsoleColors.RED, "error", message);
     }
 
-    public static void w(String message) {
-        System.out.println(formatter.format(date) + ConsoleColors.YELLOW + " [waring]" + ConsoleColors.RESET + ": " + message);
+    /**
+     * log type succes
+     * @param message
+     */
+    public static void succes(String message) {
+        PrintLogLine(ConsoleColors.GREEN, "succes", message);
     }
 }

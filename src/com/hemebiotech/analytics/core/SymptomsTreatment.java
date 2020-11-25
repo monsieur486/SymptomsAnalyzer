@@ -1,6 +1,5 @@
 package com.hemebiotech.analytics.core;
 
-import com.hemebiotech.analytics.AnalyticsCounter;
 import com.hemebiotech.analytics.services.Log;
 
 /**
@@ -23,7 +22,7 @@ public class SymptomsTreatment {
             counter = AnalyticsCounter.results.get(line) + 1;
             AnalyticsCounter.results.put(line, counter);
             String msg = counter + "nd presence of the symptom " + line;
-            Log.i(msg);
+            Log.info(msg);
         }
         /**
          *  If the symptom does not exist it is added to the map with a counter at 1
@@ -31,7 +30,7 @@ public class SymptomsTreatment {
         else {
             AnalyticsCounter.results.put(line, 1);
             String msg = "1st presence of the symptom " + line;
-            Log.i(msg);
+            Log.info(msg);
         }
     }
 

@@ -1,6 +1,6 @@
 package com.hemebiotech.analytics.services;
 
-import com.hemebiotech.analytics.AnalyticsCounter;
+import com.hemebiotech.analytics.core.AnalyticsCounter;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -22,7 +22,7 @@ public class WriteFile {
 
             AnalyticsCounter.symptomsSorted.forEach((symptom, counter) -> {
                 /**
-                 *  Try to write symptom's line in the file
+                 *  Try to write symptom'succes line in the file
                  */
                 try {
                     writer.write(symptom + ": " + counter + "\n");
@@ -31,7 +31,7 @@ public class WriteFile {
                  *  Error management
                  */
                 catch (IOException e) {
-                    Log.e("file write error");
+                    Log.error("file write error");
                     System.exit(3);
                 }
             });
@@ -40,13 +40,13 @@ public class WriteFile {
              *  Force close the file opened in write mode
              */
             writer.close();
-            Log.s("result.out file created");
+            Log.succes("result.out file created");
         }
         /**
          *  Error management
          */
         catch (IOException e) {
-            Log.e("open file in write mode");
+            Log.error("open file in write mode");
             System.exit(2);
         }
 

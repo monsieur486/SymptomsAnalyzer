@@ -1,6 +1,5 @@
-package com.hemebiotech.analytics;
+package com.hemebiotech.analytics.core;
 
-import com.hemebiotech.analytics.core.OrderSymptoms;
 import com.hemebiotech.analytics.services.Log;
 import com.hemebiotech.analytics.services.ReadFile;
 import com.hemebiotech.analytics.services.WriteFile;
@@ -36,7 +35,7 @@ public class AnalyticsCounter {
         /**
          *  Program initialization
          */
-        Log.s("program start");
+        Log.succes("program start");
 
         /**
          *  Extracts the symptoms from the symptoms.txt file and count them
@@ -56,7 +55,7 @@ public class AnalyticsCounter {
         /**
          *  End of program
          */
-        Log.s("program stops");
+        Log.succes("program stops");
 
     }
 }
