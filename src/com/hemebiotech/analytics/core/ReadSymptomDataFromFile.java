@@ -1,7 +1,6 @@
 package com.hemebiotech.analytics.core;
 
 import com.hemebiotech.analytics.config.errorCode;
-import com.hemebiotech.analytics.interfaces.ISymptomReader;
 import com.hemebiotech.analytics.services.ConsoleColors;
 import com.hemebiotech.analytics.services.Log;
 
@@ -20,8 +19,8 @@ public class ReadSymptomDataFromFile {
      * File read method
      *
      * @param inputFile the input file
+     * @return the map
      */
-
     public static Map<String, Integer> GetSymptoms(String inputFile) {
 
         Map<String, Integer> results = new HashMap<>();

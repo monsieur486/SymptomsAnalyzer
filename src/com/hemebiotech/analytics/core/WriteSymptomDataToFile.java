@@ -17,8 +17,8 @@ public class WriteSymptomDataToFile {
     /**
      * File write method
      *
-     * @param symptomsSorted
-     * @param outputFile the output file
+     * @param symptomsSorted the symptoms sorted
+     * @param outputFile     the output file
      */
     public static void writeFile(Map<String, Integer> symptomsSorted, String outputFile) {
 

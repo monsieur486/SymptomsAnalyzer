@@ -13,8 +13,8 @@ public class SymptomsTreatment {
     /**
      * Method of treatment of symtoms
      *
-     * @param line the symptom read on the line
-     * @param results
+     * @param line    the symptom read on the line
+     * @param results the results
      */
     public static void readSymptom(String line, Map<String, Integer> results) {
 

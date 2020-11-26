@@ -17,13 +17,12 @@ import java.util.Map;
  */
 public class AnalyticsCounter {
 
+
     /**
      * Program initialization
      *
      * @param args name of the file to analyze
      */
-
-
     public static void main(String[] args) {
 
         Map<String, Integer> results;
