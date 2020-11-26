@@ -25,7 +25,10 @@ public class ReadFile {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
             String line = reader.readLine();
-            Log.succes("reading " + inputFile + " file for processing");
+            Log.succes("reading "
+                    + ConsoleColors.PURPLE + inputFile + ConsoleColors.RESET
+                    + " file for processing"
+            );
 
             /**
              *  Treat symptoms as long as the file contains a nonblank line
@@ -35,12 +38,17 @@ public class ReadFile {
                 line = reader.readLine();
             }
             reader.close();
-            Log.succes("symptoms import from " + inputFile + " successfully completed");
+            Log.succes("symptoms import from "
+                    + ConsoleColors.PURPLE + inputFile + ConsoleColors.RESET
+                    + " successfully completed"
+            );
         }
         /**
          *  Handling of read errors
          */ catch (IOException e) {
-            Log.error(inputFile + " read error");
+            Log.error(ConsoleColors.PURPLE + inputFile + ConsoleColors.RESET
+                    + " read error"
+            );
             System.exit(errorCode.READFILE);
         }
 
