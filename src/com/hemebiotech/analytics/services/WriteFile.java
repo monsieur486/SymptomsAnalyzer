@@ -34,7 +34,9 @@ public class WriteFile {
                 /**
                  *  Error management
                  */ catch (IOException e) {
-                    Log.error(outputFile + " write error");
+                    Log.error(ConsoleColors.PURPLE + outputFile + ConsoleColors.RESET
+                            + " write error"
+                    );
                     System.exit(errorCode.WRITEFILE);
                 }
             });
@@ -43,12 +45,16 @@ public class WriteFile {
              *  Force close the file opened in write mode
              */
             writer.close();
-            Log.succes("output file " + outputFile + " created");
+            Log.succes("output file "
+                    + ConsoleColors.PURPLE + outputFile + ConsoleColors.RESET
+                    + " created");
         }
         /**
          *  Error management
          */ catch (IOException e) {
-            Log.error("open " + outputFile + " in write mode");
+            Log.error("open "
+                    + ConsoleColors.PURPLE + outputFile + ConsoleColors.RESET
+                    + " in write mode");
             System.exit(errorCode.WRITEFILE);
         }
 
