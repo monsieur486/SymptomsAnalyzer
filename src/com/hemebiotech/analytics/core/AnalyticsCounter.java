@@ -1,8 +1,6 @@
 package com.hemebiotech.analytics.core;
 
 import com.hemebiotech.analytics.services.Log;
-import com.hemebiotech.analytics.services.ReadFile;
-import com.hemebiotech.analytics.services.WriteFile;
 import com.hemebiotech.analytics.config.app;
 import com.hemebiotech.analytics.config.errorCode;
 
@@ -66,19 +64,19 @@ public class AnalyticsCounter {
         Log.succes("program start");
 
         /**
-         *  Extracts the symptoms from the symptoms.txt file and count them
+         *  Extracts the symptoms from the input file and count them
          */
-        ReadFile.readFile(inputFile);
+        results = ReadSymptomDataFromFile.GetSymptoms(inputFile);
 
         /**
          * Alphabetically sort the result obtained
          */
-        OrderSymptoms.orderSymptoms();
+        symptomsSorted = OrderSymptoms.orderSymptoms(results);
 
         /**
-         *  Generates the result in the result.out file
+         *  Generates the result in the output file
          */
-        WriteFile.writeFile(outputFile);
+        WriteSymptomDataToFile.writeFile(symptomsSorted, outputFile);
 
         /**
          *  End of program

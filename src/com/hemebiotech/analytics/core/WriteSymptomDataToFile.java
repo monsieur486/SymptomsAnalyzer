@@ -1,22 +1,26 @@
-package com.hemebiotech.analytics.services;
+package com.hemebiotech.analytics.core;
 
 import com.hemebiotech.analytics.config.errorCode;
 import com.hemebiotech.analytics.core.AnalyticsCounter;
+import com.hemebiotech.analytics.services.ConsoleColors;
+import com.hemebiotech.analytics.services.Log;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * Write class of the output file
  */
-public class WriteFile {
+public class WriteSymptomDataToFile {
 
     /**
      * File write method
      *
+     * @param symptomsSorted
      * @param outputFile the output file
      */
-    public static void writeFile(String outputFile) {
+    public static void writeFile(Map<String, Integer> symptomsSorted, String outputFile) {
 
         /**
          *  Try to open the result.out file in write mode
@@ -24,7 +28,7 @@ public class WriteFile {
         try {
             FileWriter writer = new FileWriter(outputFile);
 
-            AnalyticsCounter.symptomsSorted.forEach((symptom, counter) -> {
+            symptomsSorted.forEach((symptom, counter) -> {
                 /**
                  *  Try to write symptom line in the file
                  */
