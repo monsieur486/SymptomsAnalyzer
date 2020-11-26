@@ -18,9 +18,9 @@ public class OrderSymptoms {
      */
     public static Map<String, Integer> orderSymptoms(Map<String, Integer> results) {
 
-        Map<String, Integer> SortedResults = new HashMap<>();
+        Map<String, Integer> SortedResults;
 
-        SortedResults = new TreeMap(AnalyticsCounter.results);
+        SortedResults = new TreeMap(results);
         Log.succes("symptoms sorted alphabetically");
 
         return SortedResults;

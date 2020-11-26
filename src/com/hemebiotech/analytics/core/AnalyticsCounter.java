@@ -4,7 +4,6 @@ import com.hemebiotech.analytics.services.Log;
 import com.hemebiotech.analytics.config.app;
 import com.hemebiotech.analytics.config.errorCode;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -17,33 +16,28 @@ import java.util.Map;
  * @author Laurent Touret monsieur486@gmail.com
  */
 public class AnalyticsCounter {
-    /**
-     * Initiation of the public variable results
-     */
-    public static Map<String, Integer> results = new HashMap<>();
-
-    /**
-     * Initiation of the public variable symptomsSorted
-     */
-    public static Map<String, Integer> symptomsSorted;
-
-
-    /**
-     * The constant inputFile.
-     */
-    public static String inputFile = app.INPUTFILE;
-    /**
-     * The constant outputFile.
-     */
-    public static String outputFile = app.OUTPUTFILE;
 
     /**
      * Program initialization
      *
      * @param args name of the file to analyze
-     * @throws Exception the exception
      */
-    public static void main(String[] args) throws Exception {
+
+
+    public static void main(String[] args) {
+
+        Map<String, Integer> results;
+        Map<String, Integer> symptomsSorted;
+
+        /**
+         * The constant inputFile.
+         */
+        String inputFile = app.INPUTFILE;
+        /**
+         * The constant outputFile.
+         */
+        String outputFile = app.OUTPUTFILE;
+
         if (args.length == 1) {
             inputFile = args[0];
         }
@@ -62,6 +56,7 @@ public class AnalyticsCounter {
          *  Program initialization
          */
         Log.succes("program start");
+
 
         /**
          *  Extracts the symptoms from the input file and count them
