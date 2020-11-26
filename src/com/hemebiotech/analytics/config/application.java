@@ -3,7 +3,7 @@ package com.hemebiotech.analytics.config;
 /**
  * Application configuration.
  */
-public class app {
+public class application {
     /**
      * Default input file name.
      */

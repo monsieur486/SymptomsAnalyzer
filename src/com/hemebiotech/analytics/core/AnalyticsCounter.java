@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics.core;
 
 import com.hemebiotech.analytics.services.Log;
-import com.hemebiotech.analytics.config.app;
+import com.hemebiotech.analytics.config.application;
 import com.hemebiotech.analytics.config.errorCode;
 
 import java.util.Map;
@@ -17,7 +17,6 @@ import java.util.Map;
  */
 public class AnalyticsCounter {
 
-
     /**
      * Program initialization
      *
@@ -31,11 +30,11 @@ public class AnalyticsCounter {
         /**
          * The constant inputFile.
          */
-        String inputFile = app.INPUTFILE;
+        String inputFile = application.INPUTFILE;
         /**
          * The constant outputFile.
          */
-        String outputFile = app.OUTPUTFILE;
+        String outputFile = application.OUTPUTFILE;
 
         if (args.length == 1) {
             inputFile = args[0];
@@ -56,11 +55,10 @@ public class AnalyticsCounter {
          */
         Log.succes("program start");
 
-
         /**
          *  Extracts the symptoms from the input file and count them
          */
-        results = ReadSymptomDataFromFile.GetSymptoms(inputFile);
+        results = ReadSymptomDataFromFile.ReadSymptoms(inputFile);
 
         /**
          * Alphabetically sort the result obtained

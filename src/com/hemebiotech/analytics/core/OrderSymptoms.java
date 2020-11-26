@@ -15,7 +15,7 @@ public class OrderSymptoms {
      * Get the content of result and sort in symptomsSorted
      *
      * @param results the results
-     * @return map
+     * @return map map
      */
     public static Map<String, Integer> orderSymptoms(Map<String, Integer> results) {
 
