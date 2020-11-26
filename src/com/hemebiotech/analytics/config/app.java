@@ -1,15 +1,15 @@
 package com.hemebiotech.analytics.config;
 
 /**
- * The type App.
+ * Application configuration.
  */
 public class app {
     /**
-     * The constant INPUTFILE.
+     * Default input file name.
      */
     public static final String INPUTFILE = "symptoms.txt";
     /**
-     * The constant OUTPUTFILE.
+     * Default output file name.
      */
     public static final String OUTPUTFILE = "result.out";
 }

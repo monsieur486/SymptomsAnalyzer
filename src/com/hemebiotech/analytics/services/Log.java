@@ -24,7 +24,7 @@ public class Log {
      * @param message message to display
      */
     private static void PrintLogLine(String color, String logType, String message) {
-        String logLine = formatter.format(date) + color + " [" + logType + "]" + ConsoleColors.RESET + " " + message;
+        String logLine = formatter.format(date) + color + " [" + logType + "]" + ConsoleColors.RESET + " " + message ;
         System.out.println(logLine);
     }
 
