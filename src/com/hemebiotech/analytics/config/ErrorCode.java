@@ -3,7 +3,7 @@ package com.hemebiotech.analytics.config;
 /**
  * The type Error code.
  */
-public class errorCode {
+public class ErrorCode {
 
     /**
      * The constant ARGUMENT.

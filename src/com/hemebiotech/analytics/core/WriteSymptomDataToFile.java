@@ -1,7 +1,6 @@
 package com.hemebiotech.analytics.core;
 
-import com.hemebiotech.analytics.config.errorCode;
-import com.hemebiotech.analytics.core.AnalyticsCounter;
+import com.hemebiotech.analytics.config.ErrorCode;
 import com.hemebiotech.analytics.services.ConsoleColors;
 import com.hemebiotech.analytics.services.Log;
 
@@ -41,7 +40,7 @@ public class WriteSymptomDataToFile {
                     Log.error(ConsoleColors.PURPLE + outputFile + ConsoleColors.RESET
                             + " write error"
                     );
-                    System.exit(errorCode.WRITEFILE);
+                    System.exit(ErrorCode.WRITEFILE);
                 }
             });
 
@@ -59,7 +58,7 @@ public class WriteSymptomDataToFile {
             Log.error("open "
                     + ConsoleColors.PURPLE + outputFile + ConsoleColors.RESET
                     + " in write mode");
-            System.exit(errorCode.WRITEFILE);
+            System.exit(ErrorCode.WRITEFILE);
         }
 
     }

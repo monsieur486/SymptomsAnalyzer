@@ -1,15 +1,15 @@
 package com.hemebiotech.analytics.core;
 
+import com.hemebiotech.analytics.config.Application;
 import com.hemebiotech.analytics.interfaces.ISymptomReader;
 import com.hemebiotech.analytics.services.Log;
-import com.hemebiotech.analytics.config.application;
-import com.hemebiotech.analytics.config.errorCode;
+import com.hemebiotech.analytics.config.ErrorCode;
 
 import java.util.List;
 import java.util.Map;
 
 /**
- * AnalyticsCounter class of the application
+ * AnalyticsCounter class of the Application
  * <p>
  * Extracts the symptoms from the symptoms.txt file and counts them
  * Alphabetically sorting the result obtained
@@ -33,11 +33,11 @@ public class AnalyticsCounter {
         /**
          * The constant inputFile.
          */
-        String inputFile = application.INPUTFILE;
+        String inputFile = Application.INPUTFILE;
         /**
          * The constant outputFile.
          */
-        String outputFile = application.OUTPUTFILE;
+        String outputFile = Application.OUTPUTFILE;
 
         if (args.length == 1) {
             inputFile = args[0];
@@ -49,8 +49,8 @@ public class AnalyticsCounter {
         }
 
         if (args.length > 2) {
-            Log.error("application executed with too many arguments");
-            System.exit(errorCode.ARGUMENT);
+            Log.error("Application executed with too many arguments");
+            System.exit(ErrorCode.ARGUMENT);
         }
 
         ISymptomReader iSymptomReader = new ReadSymptomDataFromFile(inputFile);

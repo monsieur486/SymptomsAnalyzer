@@ -1,6 +1,6 @@
 package com.hemebiotech.analytics.core;
 
-import com.hemebiotech.analytics.config.errorCode;
+import com.hemebiotech.analytics.config.ErrorCode;
 import com.hemebiotech.analytics.interfaces.ISymptomReader;
 import com.hemebiotech.analytics.services.ConsoleColors;
 import com.hemebiotech.analytics.services.Log;
@@ -69,7 +69,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
             Log.error(ConsoleColors.PURPLE + inputFile + ConsoleColors.RESET
                     + " read error"
             );
-            System.exit(errorCode.READFILE);
+            System.exit(ErrorCode.READFILE);
         }
 
         return results;
@@ -115,7 +115,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
             Log.error(ConsoleColors.PURPLE + pathFile + ConsoleColors.RESET
                     + " read error"
             );
-            System.exit(errorCode.READFILE);
+            System.exit(ErrorCode.READFILE);
         }
 
         return results;
