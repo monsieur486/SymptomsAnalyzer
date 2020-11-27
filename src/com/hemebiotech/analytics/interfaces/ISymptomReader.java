@@ -1,6 +1,6 @@
 package com.hemebiotech.analytics.interfaces;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * The interface Symptom reader.
@@ -11,5 +11,5 @@ public interface ISymptomReader {
      *
      * @return Map map
      */
-    Map<String, Integer> GetSymptoms();
+    List<String> getSymptoms();
 }

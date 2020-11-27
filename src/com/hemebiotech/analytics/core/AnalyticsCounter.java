@@ -1,9 +1,11 @@
 package com.hemebiotech.analytics.core;
 
+import com.hemebiotech.analytics.interfaces.ISymptomReader;
 import com.hemebiotech.analytics.services.Log;
 import com.hemebiotech.analytics.config.application;
 import com.hemebiotech.analytics.config.errorCode;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,50 +19,16 @@ import java.util.Map;
  */
 public class AnalyticsCounter {
 
-    /**
-     * The type Main treatment.
-     */
-    public static class MainTreatment {
-
-        private Map<String, Integer> results;
-        private Map<String, Integer> symptomsSorted;
-        private String inputFile;
-        private String outputFile;
-
-        /**
-         * Instantiates a new Main treatment.
-         *
-         * @param inputFile  the input file
-         * @param outputFile the output file
-         */
-        public MainTreatment(String inputFile, String outputFile) {
-            this.inputFile = inputFile;
-            this.outputFile = outputFile;
-
-            /**
-             *  Extracts the symptoms from the input file and count them
-             */
-            results = ReadSymptomDataFromFile.ReadSymptoms(inputFile);
-
-            /**
-             * Alphabetically sort the result obtained
-             */
-            symptomsSorted = OrderSymptoms.orderSymptoms(results);
-
-            /**
-             *  Generates the result in the output file
-             */
-            WriteSymptomDataToFile.writeFile(symptomsSorted, outputFile);
-        }
-
-    }
-
-    /**
+   /**
      * Program initialization
      *
      * @param args name of the file to analyze
      */
     public static void main(String[] args) {
+
+        List<String> brutResults;
+        Map<String, Integer> results;
+        Map<String, Integer> symptomsSorted;
 
         /**
          * The constant inputFile.
@@ -85,11 +53,28 @@ public class AnalyticsCounter {
             System.exit(errorCode.ARGUMENT);
         }
 
+        ISymptomReader iSymptomReader = new ReadSymptomDataFromFile(inputFile);
+
+        /**
+         *  Extracts the symptoms from the input file and count them
+         */
+        brutResults = iSymptomReader.getSymptoms();
+
+
+        /**
+         * Alphabetically sort the result obtained
+         */
+        //symptomsSorted = OrderSymptoms.orderSymptoms(results);
+
+        /**
+         *  Generates the result in the output file
+         */
+        //WriteSymptomDataToFile.writeFile(symptomsSorted, outputFile);
+
         /**
          *  Program initialization
          */
         Log.info("program start");
-        new MainTreatment(inputFile, outputFile);
 
         /**
          *  End of program
