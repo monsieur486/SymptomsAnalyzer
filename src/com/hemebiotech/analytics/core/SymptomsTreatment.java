@@ -12,9 +12,10 @@ public class SymptomsTreatment {
 
     /**
      * Method of treatment of symtoms
-     *  @param line    the symptom read on the line
-     * @param currentLine
-     * @param results the results
+     *
+     * @param line        the symptom read on the line
+     * @param currentLine the current line
+     * @param results     the results
      */
     public static void readSymptom(String line, Integer currentLine, Map<String, Integer> results) {
 
