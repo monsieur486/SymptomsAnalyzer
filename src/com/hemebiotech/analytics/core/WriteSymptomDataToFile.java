@@ -48,9 +48,6 @@ public class WriteSymptomDataToFile {
              *  Force close the file opened in write mode
              */
             writer.close();
-            Log.succes("output file "
-                    + ConsoleColors.PURPLE + outputFile + ConsoleColors.RESET
-                    + " created");
         }
         /**
          *  Error management

@@ -1,10 +1,10 @@
 package com.hemebiotech.analytics.core;
 
 import com.hemebiotech.analytics.config.Application;
+import com.hemebiotech.analytics.interfaces.ISymptomMap;
 import com.hemebiotech.analytics.interfaces.ISymptomReader;
 import com.hemebiotech.analytics.services.Log;
 import com.hemebiotech.analytics.config.ErrorCode;
-
 import java.util.List;
 import java.util.Map;
 
@@ -19,24 +19,17 @@ import java.util.Map;
  */
 public class AnalyticsCounter {
 
-   /**
+    /**
      * Program initialization
      *
      * @param args name of the file to analyze
      */
     public static void main(String[] args) {
 
-        List<String> brutResults;
-        Map<String, Integer> results;
-        Map<String, Integer> symptomsSorted;
-
         /**
-         * The constant inputFile.
+         *  Program initialization
          */
         String inputFile = Application.INPUTFILE;
-        /**
-         * The constant outputFile.
-         */
         String outputFile = Application.OUTPUTFILE;
 
         if (args.length == 1) {
@@ -53,33 +46,21 @@ public class AnalyticsCounter {
             System.exit(ErrorCode.ARGUMENT);
         }
 
+        /**
+         *  Extracts the symptoms from the input file into rawResults list
+         */
         ISymptomReader iSymptomReader = new ReadSymptomDataFromFile(inputFile);
+        List<String> rawResults = iSymptomReader.getSymptoms();
 
         /**
-         *  Extracts the symptoms from the input file and count them
+         *  Counts the symptoms in the list and sorts them alphabetically
          */
-        brutResults = iSymptomReader.getSymptoms();
-
+        ISymptomMap iSymptomMap = new CountSymptomDataFromList(rawResults);
+        Map<String, Integer> symptomsSorted = iSymptomMap.getSymptoms();
 
         /**
-         * Alphabetically sort the result obtained
+         *  Write the result in the output file
          */
-        //symptomsSorted = OrderSymptoms.orderSymptoms(results);
-
-        /**
-         *  Generates the result in the output file
-         */
-        //WriteSymptomDataToFile.writeFile(symptomsSorted, outputFile);
-
-        /**
-         *  Program initialization
-         */
-        Log.info("program start");
-
-        /**
-         *  End of program
-         */
-        Log.succes("program stops");
-
+        WriteSymptomDataToFile.writeFile(symptomsSorted, outputFile);
     }
 }
