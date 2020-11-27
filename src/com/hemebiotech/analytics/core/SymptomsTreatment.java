@@ -12,11 +12,11 @@ public class SymptomsTreatment {
 
     /**
      * Method of treatment of symtoms
-     *
-     * @param line    the symptom read on the line
+     *  @param line    the symptom read on the line
+     * @param currentLine
      * @param results the results
      */
-    public static void readSymptom(String line, Map<String, Integer> results) {
+    public static void readSymptom(String line, Integer currentLine, Map<String, Integer> results) {
 
         Integer counter;
 
@@ -30,6 +30,8 @@ public class SymptomsTreatment {
                     + "nd " + ConsoleColors.RESET
                     + "presence of the symptom "
                     + ConsoleColors.PURPLE + line + ConsoleColors.RESET
+                    + " on the line "
+                    + ConsoleColors.PURPLE + currentLine + ConsoleColors.RESET
             );
         }
         /**
@@ -40,6 +42,8 @@ public class SymptomsTreatment {
             Log.info(ConsoleColors.PURPLE + "1st " + ConsoleColors.RESET
                     + "presence of the symptom "
                     + ConsoleColors.PURPLE + line + ConsoleColors.RESET
+                    + " on the line "
+                    + ConsoleColors.PURPLE + currentLine + ConsoleColors.RESET
             );
         }
     }

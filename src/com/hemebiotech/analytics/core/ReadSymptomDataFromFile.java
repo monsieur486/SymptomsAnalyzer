@@ -40,8 +40,12 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
             /**
              *  Treat symptoms as long as the file contains a nonblank line
              */
+
+            Integer currentLine = 0;
+
             while (line != null) {
-                SymptomsTreatment.readSymptom(line, results);
+                currentLine += 1;
+                SymptomsTreatment.readSymptom(line, currentLine, results);
                 line = reader.readLine();
             }
 
