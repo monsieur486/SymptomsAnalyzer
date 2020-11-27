@@ -11,9 +11,9 @@ import java.util.Map;
 /**
  * AnalyticsCounter class of the Application
  * <p>
- * Extracts the symptoms from the symptoms.txt file and counts them
+ * Extracts the symptoms from the input file and counts them
  * Alphabetically sorting the result obtained
- * Generate the result in the result.out file
+ * Generate the result in the output file
  *
  * @author Laurent Touret monsieur486@gmail.com
  */
@@ -22,7 +22,7 @@ public class AnalyticsCounter {
     /**
      * Program initialization
      *
-     * @param args name of the file to analyze
+     * @param args names of input and output files
      */
     public static void main(String[] args) {
 

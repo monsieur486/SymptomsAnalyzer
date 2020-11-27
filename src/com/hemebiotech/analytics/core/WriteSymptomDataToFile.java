@@ -45,7 +45,7 @@ public class WriteSymptomDataToFile {
             });
 
             /**
-             *  Force close the file opened in write mode
+             *  close the file opened in write mode
              */
             writer.close();
         }
