@@ -1,6 +1,5 @@
 package com.hemebiotech.analytics.core;
 
-import com.hemebiotech.analytics.interfaces.ISymptomReader;
 import com.hemebiotech.analytics.services.Log;
 import com.hemebiotech.analytics.config.application;
 import com.hemebiotech.analytics.config.errorCode;
@@ -18,24 +17,42 @@ import java.util.Map;
  */
 public class AnalyticsCounter {
 
-    public static class MainTreatment implements ISymptomReader {
+    /**
+     * The type Main treatment.
+     */
+    public static class MainTreatment {
 
-        public Map<String, Integer> results;
-        public Map<String, Integer> symptomsSorted;
-
+        private Map<String, Integer> results;
+        private Map<String, Integer> symptomsSorted;
         private String inputFile;
         private String outputFile;
 
+        /**
+         * Instantiates a new Main treatment.
+         *
+         * @param inputFile  the input file
+         * @param outputFile the output file
+         */
         public MainTreatment(String inputFile, String outputFile) {
             this.inputFile = inputFile;
             this.outputFile = outputFile;
+
+            /**
+             *  Extracts the symptoms from the input file and count them
+             */
+            results = ReadSymptomDataFromFile.ReadSymptoms(inputFile);
+
+            /**
+             * Alphabetically sort the result obtained
+             */
+            symptomsSorted = OrderSymptoms.orderSymptoms(results);
+
+            /**
+             *  Generates the result in the output file
+             */
+            WriteSymptomDataToFile.writeFile(symptomsSorted, outputFile);
         }
 
-        @Override
-        public Map<String, Integer> GetSymptoms() {
-            Map<String, Integer> symptoms = ReadSymptomDataFromFile.ReadSymptoms(this.inputFile);
-            return symptoms;
-        }
     }
 
     /**
@@ -72,22 +89,7 @@ public class AnalyticsCounter {
          *  Program initialization
          */
         Log.info("program start");
-        MainTreatment mainTreatment = new MainTreatment(inputFile, outputFile);
-
-        /**
-         *  Extracts the symptoms from the input file and count them
-         */
-        mainTreatment.results = ReadSymptomDataFromFile.ReadSymptoms(inputFile);
-
-        /**
-         * Alphabetically sort the result obtained
-         */
-        mainTreatment.symptomsSorted = OrderSymptoms.orderSymptoms(mainTreatment.results);
-
-        /**
-         *  Generates the result in the output file
-         */
-        WriteSymptomDataToFile.writeFile(mainTreatment.symptomsSorted, outputFile);
+        new MainTreatment(inputFile, outputFile);
 
         /**
          *  End of program
