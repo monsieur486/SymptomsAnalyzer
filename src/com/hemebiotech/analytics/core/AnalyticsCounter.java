@@ -1,5 +1,6 @@
 package com.hemebiotech.analytics.core;
 
+import com.hemebiotech.analytics.interfaces.ISymptomReader;
 import com.hemebiotech.analytics.services.Log;
 import com.hemebiotech.analytics.config.application;
 import com.hemebiotech.analytics.config.errorCode;
@@ -17,15 +18,32 @@ import java.util.Map;
  */
 public class AnalyticsCounter {
 
+    public static class MainTreatment implements ISymptomReader {
+
+        public Map<String, Integer> results;
+        public Map<String, Integer> symptomsSorted;
+
+        private String inputFile;
+        private String outputFile;
+
+        public MainTreatment(String inputFile, String outputFile) {
+            this.inputFile = inputFile;
+            this.outputFile = outputFile;
+        }
+
+        @Override
+        public Map<String, Integer> GetSymptoms() {
+            Map<String, Integer> symptoms = ReadSymptomDataFromFile.ReadSymptoms(this.inputFile);
+            return symptoms;
+        }
+    }
+
     /**
      * Program initialization
      *
      * @param args name of the file to analyze
      */
     public static void main(String[] args) {
-
-        Map<String, Integer> results;
-        Map<String, Integer> symptomsSorted;
 
         /**
          * The constant inputFile.
@@ -53,22 +71,23 @@ public class AnalyticsCounter {
         /**
          *  Program initialization
          */
-        Log.succes("program start");
+        Log.info("program start");
+        MainTreatment mainTreatment = new MainTreatment(inputFile, outputFile);
 
         /**
          *  Extracts the symptoms from the input file and count them
          */
-        results = ReadSymptomDataFromFile.ReadSymptoms(inputFile);
+        mainTreatment.results = ReadSymptomDataFromFile.ReadSymptoms(inputFile);
 
         /**
          * Alphabetically sort the result obtained
          */
-        symptomsSorted = OrderSymptoms.orderSymptoms(results);
+        mainTreatment.symptomsSorted = OrderSymptoms.orderSymptoms(mainTreatment.results);
 
         /**
          *  Generates the result in the output file
          */
-        WriteSymptomDataToFile.writeFile(symptomsSorted, outputFile);
+        WriteSymptomDataToFile.writeFile(mainTreatment.symptomsSorted, outputFile);
 
         /**
          *  End of program

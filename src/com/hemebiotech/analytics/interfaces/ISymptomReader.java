@@ -9,7 +9,7 @@ public interface ISymptomReader {
     /**
      * If no data is available, return an empty List
      *
-     * @return string
+     * @return Map
      */
     Map<String, Integer> GetSymptoms();
 }
