@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * Write class of the output file
+ * Writes class of the output file
  */
 public class WriteSymptomDataToFile {
 
@@ -22,14 +22,14 @@ public class WriteSymptomDataToFile {
     public static void writeFile(Map<String, Integer> symptomsSorted, String outputFile) {
 
         /**
-         *  Try to open the result.out file in write mode
+         *  Tries to open the result.out file in write mode
          */
         try {
             FileWriter writer = new FileWriter(outputFile);
 
             symptomsSorted.forEach((symptom, counter) -> {
                 /**
-                 *  Try to write symptom line in the file
+                 *  Tries to write the symptom line in the file
                  */
                 try {
                     writer.write(symptom + ": " + counter + "\n");
@@ -49,7 +49,7 @@ public class WriteSymptomDataToFile {
                     + " successfully created");
 
             /**
-             *  close the file opened in write mode
+             * Closes the file opened in write mode
              */
             writer.close();
         }

@@ -1,7 +1,6 @@
 package com.hemebiotech.analytics.core;
 
 import com.hemebiotech.analytics.interfaces.ISymptomMap;
-import com.hemebiotech.analytics.services.ConsoleColors;
 import com.hemebiotech.analytics.services.Log;
 
 import java.util.HashMap;
@@ -10,14 +9,14 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Class used to read the contents of the symptoms.txt file
+ * Class used to read the contents of the input file
  */
 public class CountSymptomDataFromList implements ISymptomMap {
 
     private List<String> symptomList;
 
     /**
-     * Instantiates a new Count symptom data from list.
+     * Counts symptoms from data list.
      *
      * @param rawResults the raw results
      */

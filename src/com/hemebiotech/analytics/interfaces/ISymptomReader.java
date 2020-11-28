@@ -7,9 +7,9 @@ import java.util.List;
  */
 public interface ISymptomReader {
     /**
-     * If no data is available, return an empty List
+     * If no data available, returns an empty List
      *
-     * @return Map map
+     * @return List rawResult
      */
     List<String> getSymptoms();
 }

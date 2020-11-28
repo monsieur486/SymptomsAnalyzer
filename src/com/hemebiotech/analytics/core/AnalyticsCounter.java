@@ -12,8 +12,8 @@ import java.util.Map;
  * AnalyticsCounter class of the Application
  * <p>
  * Extracts the symptoms from the input file and counts them
- * Alphabetically sorting the result obtained
- * Generate the result in the output file
+ * Sorts the result obtained alphabetically
+ * Generates the result in the output file
  *
  * @author Laurent Touret monsieur486@gmail.com
  */
@@ -59,7 +59,7 @@ public class AnalyticsCounter {
         Map<String, Integer> symptomsSorted = iSymptomMap.getSymptoms();
 
         /**
-         *  Write the result in the output file
+         *  Writes the result in the output file
          */
         WriteSymptomDataToFile.writeFile(symptomsSorted, outputFile);
     }

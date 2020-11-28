@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * print log messages
+ * Prints log messages
  */
 public class Log {
     /**
@@ -53,11 +53,11 @@ public class Log {
     }
 
     /**
-     * log type succes
+     * log type success
      *
      * @param message the message
      */
-    public static void succes(String message) {
-        PrintLogLine(ConsoleColors.GREEN, "succes", message);
+    public static void success(String message) {
+        PrintLogLine(ConsoleColors.GREEN, "success", message);
     }
 }

@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics.config;
 
 /**
- * Application configuration.
+ * Application settings.
  */
 public class Application {
     /**

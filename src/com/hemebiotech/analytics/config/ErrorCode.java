@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics.config;
 
 /**
- * The type Error code.
+ * Types of errors.
  */
 public class ErrorCode {
 

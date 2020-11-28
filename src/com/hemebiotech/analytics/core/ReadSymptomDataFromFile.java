@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Class used to read the contents of the symptoms.txt file
+ * Class used to read the contents of the input file
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
@@ -21,7 +21,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
     public String pathFile;
 
     /**
-     * Instantiates a new Read symptom data from file.
+     * Reads symptom data from file.
      *
      * @param pathFile the path file
      */
@@ -32,14 +32,14 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
         List<String> results = new ArrayList<>();
 
         /**
-         *  Try to open the file in read mode
+         *  Tries to open the file in read mode
          */
         try {
             BufferedReader reader = new BufferedReader(new FileReader(pathFile));
             String line = reader.readLine();
 
             /**
-             *  Treat symptoms as long as the file contains a non blank line
+             *  Treats symptoms as long as the file contains a non-blank line
              */
             while (line != null) {
                 results.add(line);
@@ -49,7 +49,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
             reader.close();
         }
         /**
-         *  Handling of read errors
+         *  Handles read errors
          */ catch (IOException e) {
             Log.error(ConsoleColors.PURPLE + pathFile + ConsoleColors.RESET
                     + " read error"

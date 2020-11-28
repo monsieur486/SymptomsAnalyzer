@@ -1,6 +1,5 @@
 package com.hemebiotech.analytics.interfaces;
 
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -8,9 +7,9 @@ import java.util.Map;
  */
 public interface ISymptomMap {
     /**
-     * If no data is available, return an empty List
+     * If no data available, returns an empty List
      *
-     * @return Map map
+     * @return Map symptoms count
      */
     Map<String, Integer> getSymptoms();
 }
