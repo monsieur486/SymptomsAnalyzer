@@ -57,6 +57,10 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
             System.exit(ErrorCode.READFILE);
         }
 
+        Log.info("extraction of symptoms from "
+                + ConsoleColors.PURPLE + pathFile + ConsoleColors.RESET
+                + " successfully completed");
+
         return results;
     }
 }

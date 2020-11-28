@@ -1,6 +1,9 @@
 package com.hemebiotech.analytics.core;
 
 import com.hemebiotech.analytics.interfaces.ISymptomMap;
+import com.hemebiotech.analytics.services.ConsoleColors;
+import com.hemebiotech.analytics.services.Log;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +43,7 @@ public class CountSymptomDataFromList implements ISymptomMap {
 
         });
 
+        Log.info("symptoms counted and sorted successfully");
         return new TreeMap(symptomsUnsorted);
     }
 }

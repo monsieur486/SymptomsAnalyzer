@@ -7,13 +7,10 @@ public class ConsoleColors {
     /**
      * The constant RESET.
      */
-// Reset
     public static final String RESET = "\033[0m";
-
     /**
      * The constant BLACK.
      */
-// Regular Colors
     public static final String BLACK = "\033[0;30m";
     /**
      * The constant RED.
