@@ -13,6 +13,7 @@ insomnia
 constricted pupils
 nausea
 cough
+anxiety
 shortness of breath
 blurred vision
 dizziness
